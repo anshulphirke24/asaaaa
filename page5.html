@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Final 💖</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* glowing text */
+.glow {
+    font-size: 22px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #fff; }
+    to { text-shadow: 0 0 20px #ff4da6, 0 0 30px #ff4da6; }
+}
+
+/* hearts animation */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-800px); opacity: 0; }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💖 For You Sasuuu 💖</h1>
+
+<h2 id="typing"></h2>
+
+<p class="glow" id="msg"></p>
+
+<div class="nav">
+    <a href="page4.html">⬅️ Back</a>
+</div>
+
+</div>
+
+<script>
+// typing effect
+let text = `Dear sasuu 💖
+
+Tu naaa khupp changli aahe, like you are the bestt 💗  
+Tujha swabhav mala khup avadtooo 💕  
+
+Tasa tr mala purna tuch avadte pn tariii 🥹  
+
+Ik apla ups and downs chalu astaaa, but we need to fight this together with love ❤️  
+
+Andd tu bolat raha reee...  
+Tujhi badbad aikun mala kantala nahi yet 😌  
+Ulat tu shant baslyaavr mala jasta kantala yeto 💔  
+
+Mich ae tujhyakade badbad aiknara 🥹  
+Tu shanta baslyavr malach bore hotaa...  
+
+Tu kirkir karat jaa 😤  
+Tu majhyaa gondas dokyachaa taap ae tuuu 🥹💗  
+
+Ani parat, as I say…  
+In the world of maybes, you are my forever…  
+Noo, you WILL be my forever ❤️💍  
+
+I hope apan asach ekamekan la support karat rahui 🧿  
+
+Khup kahi aahe bolaylaa…  
+But tarii te nantar kadhiii 💭  
+
+I love you so much 💗`;
+
+let i = 0;
+function type() {
+    if (i < text.length) {
+        document.getElementById("msg").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 30);
+    }
+}
+type();
+
+// floating hearts
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+}, 300);
+</script>
+
+</body>
+</html>
